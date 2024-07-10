@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="car_model-update.css">
+<form action="http://localhost:3300/car1model" method="POST">
+    <div class="info">
+        <h2>Update Car Model Data</h2>
+        <div class="box">
+            <input type="text" name="model_name" placeholder="Enter Model Name" required>
+            <input type="text" name="manufacturer_id" placeholder="Enter Manufacturer ID" required>
+            <input type="text" name="production_year" placeholder="Enter Production Year" required>
+            <input type="text" name="engine_type" placeholder="Enter Engine Type" required>
+            <input type="text" name="fuel_type" placeholder="Enter Fuel Type" required>
+            <input type="text" name="color_options" placeholder="Enter Color Options" required>
+            <input type="text" name="seating_capacity" placeholder="Enter Seating Capacity" required>
+            <!-- Hidden input to pass car model ID -->
+            <input type="text" name="model_id" placeholder="Enter model_id" required>
+        </div>
+        <input class="btn" type="submit" value="Submit">
+    </div>
+</form>

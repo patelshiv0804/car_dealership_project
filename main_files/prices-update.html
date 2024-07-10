@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="prices-update.css">
+<form action="http://localhost:3300/update-car-price" method="POST">
+    <div class="info">
+        <h2>Update Prices</h2>
+        <div class="box">
+            <input type="text" name="part_id" placeholder="Enter Part ID" required>
+            <input type="text" name="model_id" placeholder="Enter Model ID" required>
+            <input type="number" name="on_road_price" placeholder="Enter On-road Price" required>
+            <input type="number" name="discount_percentage" placeholder="Enter Discount Percentage" required>
+            <input type="number" name="final_price" placeholder="Enter Final Price" required>
+            <input type="text" name="payment_mode" placeholder="Enter Payment Mode" required>
+        </div>
+        <input class="btn" type="submit" value="Submit">
+    </div>
+</form>

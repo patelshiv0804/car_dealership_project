@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="Order-update.css">
+<form action="http://localhost:3300/update-orders" method="POST">
+    <div class="info">
+        <h2>Update Order Data</h2>
+        <div class="box">
+            <input type="text" name="customer_id" placeholder="Enter Customer ID" required>
+            <input type="date" name="order_date" placeholder="Enter date" required>
+            <input type="text" name="order_id" placeholder="Enter order ID" required>
+            <input type="text" name="delivery_address" placeholder="Enter Delivery Address" required>
+            <input type="date" name="delivery_date" placeholder="Enter date" required>
+            <input type="text" name="payment_method" placeholder="Enter Payment Method" required>
+            <input type="text" name="order_status" placeholder="Enter Order Status" required>
+            <input type="number" name="total_amount" placeholder="Enter Total Amount" required>
+        </div>
+        <input class="btn" type="submit" value="Submit">
+    </div>
+</form>

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="car_model-insert.css">
+<form action="http://localhost:3300/carmodel" method="POST"><div class="info">
+    <h2>Insert Car Model Data</h2>
+    <label for="modelName">Model Name:</label>
+    <input type="text" id="modelName" name="modelName" required><br><br>
+    <label for="modelId">Model ID:</label>
+    <input type="text" id="modelId" name="modelId" required><br><br>
+
+    <!-- <label for="manufacturerId">Manufacturer ID:</label>
+        <input type="text" id="manufacturerId" name="manufacturerId" required><br><br> -->
+    <label for="manufacturerId">Manufacturer</label>
+    <select title="Manufacturer ID:" name="manufacturerId" id="manufacture-select">
+    </select>
+
+    <br/>
+    <br/>
+
+    <label for="productionYear">Production Year:</label>
+    <input type="text" id="productionYear" name="productionYear" required><br><br>
+
+    <label for="engineType">Engine Type:</label>
+    <input type="text" id="engineType" name="engineType" required><br><br>
+
+    <label for="fuelType">Fuel Type:</label>
+    <input type="text" id="fuelType" name="fuelType" required><br><br>
+
+    <label for="colorOptions">Color Options:</label>
+    <input type="text" id="colorOptions" name="colorOptions" required><br><br>
+
+    <label for="seatingCapacity">Seating Capacity:</label>
+    <input type="text" id="seatingCapacity" name="seatingCapacity" required><br><br>
+
+    <input class="btn" type="submit" value="SUBMIT"></div>
+</form>
+<script>
+    const manfacturerSelect = document.getElementById("manufacture-select");
+    fetch("http://localhost:3300/manufacturing-unit").then((res) => {
+        res.json().then((data) => {
+            data.forEach(manufactorer => {
+                const opt = document.createElement('option');
+                opt.value = manufactorer.manufacturer_id;
+                opt.innerHTML = manufactorer.manufacturer_name;
+                manfacturerSelect.appendChild(opt);
+            })
+
+        })
+    }).catch(err => console.log(error))
+</script>

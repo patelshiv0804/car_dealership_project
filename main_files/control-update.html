@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="control-update.css">
+<form action="http://localhost:3300/update-quality-control" method="POST">
+    <div class="info">
+        <h2>Update Quality Control Data</h2>
+        <div class="box">
+            <input type="text" name="quality_control_id" placeholder="Enter quality_control ID" required>
+            <input type="text" name="model_id" placeholder="Enter Model ID" required>
+            <input type="date" name="inspection_date" placeholder="Enter date" required>
+            <input type="text" name="inspector_id" placeholder="Enter Inspector ID" required>
+            <input type="text" name="result" placeholder="Enter Result" required>
+            <input type="text" name="comments" placeholder="Enter Comments" required>
+            <!-- <textarea name="testing_criteria" placeholder="Enter Testing Criteria" required></textarea> -->
+            <input type="number" name="crash_test_percentage" placeholder="Enter Crash Test Percentage" required>
+        </div>
+        <input class="btn" type="submit" value="Submit">
+    </div>
+</form>

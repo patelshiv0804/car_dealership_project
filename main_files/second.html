@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="second_style.css">
+
+</head>
+
+<body>
+    <div class="inner">
+        <div id="group1">
+            <button onclick="getData('manufacturing-unit')">
+                <div class="manufacturing">
+                    <img src="./car_icon/icons8-manufacture-100.png" alt="">
+                    <p class="manufacturing-child">Manufacturing Unit</p>
+                </div>
+            </button>
+
+            <button onclick="getData('car_model')">
+                <div class="model">
+                    <img src="./car_icon/car.png" alt="">
+                    <p class="model-child">Model</p>
+                </div>
+            </button>
+
+            <button onclick="getData('prices')">
+                <div class="price">
+                    <img src="./car_icon/car-price.png" alt="">
+                    <p class="price-child">Price</p>
+                </div>
+            </button>
+        </div>
+
+        <div id="group3">
+            <button onclick="getData('custom')">
+                <div class="customer">
+                    <img src="./car_icon/customer_3126647.png" alt="">
+                    <p class="customer-child">Customer</p>
+                </div>
+            </button>
+
+            <button onclick="getData('car_supplier')">
+                <div class="supplier">
+                    <img src="./car_icon/delivery-truck_10235373.png" alt="">
+                    <p class="supplier-child">Supplier</p>
+                </div>
+            </button>
+
+            <button onclick="getData('Order')">
+                <div class="order">
+                    <img src="./car_icon/shopping-cart_4824141.png" alt="">
+                    <p class="order-child">Orders</p>
+                </div>
+            </button>
+        </div>
+
+        <div id="group4">
+            <button onclick="getData('control')">
+                <div class="quality">
+                    <img src="./car_icon/premium-badge.png" alt="">
+                    <p class="quality-child">Quality Control</p>
+                </div>
+            </button>
+
+            <button onclick="getData('Variant')">
+                <div class="variant">
+                    <img src="./car_icon/electric-car.png" alt="">
+                    <p class="variant-child">Variant</p>
+                </div>
+            </button>
+
+            <button onclick="getData('part')">
+                <div class="inventory">
+                    <img src="./car_icon/car-parts.png" alt="">
+                    <p class="carpart-child">Car Parts</p>
+                </div>
+            </button>
+        </div>
+    </div>
+    <script>
+        function getData(endpoint) {
+            window.location.href = `data.html?tbl=${endpoint}`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="car_model-search.css">
+<form onsubmit="handleSubmit(event)">
+    <div class="info">
+        <h2>Serach Data</h2>
+        <label id="tableLabel" for="mid">Model Id to Search:</label>
+        <input type="text" id="mid" name="mid" required><br><br>
+        <input class="btn" type="submit" value="Search">
+    </div>
+    <div class="man-data"></div>
+</form>
+<script>
+    const tables = {
+        'manufacturing-unit': {
+            label: 'Car Manufacturer',
+            table: 'carmanufacturers',
+        },
+        'car_model': {
+            label: 'Car Model',
+            table: 'carmodel',
+        },
+        'part': {
+            label: 'Car Parts',
+            table: 'carparts',
+        },
+        'prices': {
+            label: 'Car Price',
+            table: 'car_price',
+        },
+        'custom': {
+            label: 'Customer',
+            table: 'customer',
+        },
+        'Order': {
+            label: 'Orders',
+            table: 'orders',
+        },
+        'control': {
+            label: 'Quality Control',
+            table: 'qualitycontrol',
+        },
+        'car_supplier': {
+            label: 'Supplier',
+            table: 'supplier',
+        },
+        'Variant': {
+            label: 'Variant',
+            table: 'variant',
+        }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('tb');
+
+    document.getElementById('tableLabel').textContent = tables[myParam].label;
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const id = document.getElementById('mid').value;
+
+        fetch(`http://localhost:3300/search/${tables[myParam].table}?id=${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+
+        })
+            .then(response => response.json())
+            .then(({ data }) => {
+                console.log(data);
+                const table = createTable(data);
+                document.querySelector('.man-data').innerHTML = '';
+                document.querySelector('.man-data').appendChild(table);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+    function createTable(data) {
+        const table = document.createElement('table');
+        table.style.borderCollapse = 'collapse'; // Ensures borders are collapsed and not doubled
+
+        // Creating header row
+        const headerRow = table.insertRow();
+        for (const key in data[0]) {
+            const headerCell = headerRow.insertCell();
+            headerCell.textContent = key;
+            headerCell.style.border = '1px solid white'; // Adding border to header cells
+        }
+
+        // Creating data rows
+        data.forEach(item => {
+            const row = table.insertRow();
+            for (const key in item) {
+                const cell = row.insertCell();
+                cell.textContent = item[key];
+                cell.style.border = '1px solid white'; // Adding border to data cells
+            }
+        });
+
+        // Adding border to rows
+        const allRows = table.querySelectorAll('tr');
+        allRows.forEach(row => {
+            row.style.border = '1px solid white';
+        });
+
+        return table;
+    }
+
+</script>

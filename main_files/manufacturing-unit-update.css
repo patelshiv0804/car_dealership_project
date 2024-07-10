@@ -1,0 +1,32 @@
+body{
+    background: linear-gradient(-0.38deg, #b0b7c3, rgba(135, 143, 152, 0.98) 11.86%, rgba(80, 91, 101, 0.91) 26.16%, rgba(35, 48, 59, 0.85) 57.6%, #001b31 90%);
+}
+
+.info{
+    position: absolute;
+    top: 5%;
+    left: 39%;
+    color: white;
+}
+
+input{
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn{
+    margin-top: 10px;
+    background-color: #858D95;
+    border: none;
+    height: 30px;
+    width: 90px;
+
+}
+
+.box{
+    display: grid;
+    gap: 20px;
+}

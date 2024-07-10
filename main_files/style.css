@@ -1,0 +1,92 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    line-height: normal;
+    background: linear-gradient(-0.38deg, #b0b7c3, rgba(135, 143, 152, 0.98) 11.86%, rgba(80, 91, 101, 0.91) 26.16%, rgba(35, 48, 59, 0.85) 57.6%, #001b31 90%);
+}
+
+.car_photo .car{
+    width: 914.3px;
+    /* height: 721.3px; */
+    top: 34%;
+    left: 25%;
+    position:absolute;
+    z-index: 2;
+    /* filter: drop-shadow(rgb(41, 41, 41) 1px 26px 12px); */
+}
+
+
+
+.car_photo .shadow{
+  
+        position: absolute;
+        top: 63%;
+        left: 34%;
+        width: 678.8px;
+        height: 214px;
+        object-fit: contain;
+        z-index: 1;
+   
+}
+
+#text {
+    position: absolute;
+    top: 16%;
+    left: 15%;
+}
+
+#text .tag_line{
+    font-size: 55px;
+    
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffff;
+}
+
+
+#text .tag_line p {
+    letter-spacing: 3px;
+    margin-top: 0%;
+    margin-bottom: 1%;
+}
+
+#text .sub_title{
+    font-size: 24px;
+ 
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 54px;
+    color: #ffff;
+}
+
+#text .sub_title p{
+    letter-spacing: 3px;
+    margin-top: 0%;
+    margin-bottom: 1%;
+}
+
+#text .btn{
+    margin-top: 45px;
+}
+
+#text .btn :hover{
+   cursor: pointer;
+}
+#text .btn button{
+    height: 60px;
+    width: 225px;
+    font-size: 29px;
+    border-radius: 10px;
+    border: none;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #858D95;
+    color: #ffff;
+}
+
+
+

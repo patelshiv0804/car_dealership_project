@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="car_model-delete.css">
+<form id="form-id">
+    <div class="info">
+        <h2>Delete Car Model Data</h2>
+        <label for="deleteModelId">Model ID to Delete:</label>
+        <input type="text" id="deleteModelId" name="deleteModelId" required><br><br>
+        <input class="btn" type="submit" value="DELETE">
+    </div>
+</form>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('tbl');
+    document.getElementById('form-id').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const deleteModelId = document.getElementById('deleteModelId').value;
+        const data = {
+            deleteModelId: deleteModelId
+        };
+        fetch('http://localhost:3300/delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(data => {
+                if (!data.ok) {
+                    throw new Error('Error deleting data');
+                }
+
+                window.history.replaceState(null, null, `data.html?tbl=${myParam}`);
+                window.location.reload();
+                alert('Data deleted successfully!');
+            })
+            .catch((error) => {
+                alert('Error deleting data')
+            });
+    });
+</script>

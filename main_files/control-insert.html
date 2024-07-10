@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="control-insert.css">
+<form action="http://localhost:3300/quality_control" method="POST">
+    <div class="info">
+        <h2>Insert Quality Control Data</h2>
+        <label for="quality_control_id">Quality Control ID:</label>
+        <input type="text" id="quality_control_id" name="quality_control_id" required><br><br>
+
+        <label for="model_id">Model ID:</label>
+        <input type="text" id="model_id" name="model_id" required><br><br>
+
+        <label for="inspection_date">Inspection Date:</label>
+        <input type="date" id="inspection_date" name="inspection_date" required><br><br>
+
+        <label for="inspector_id">Inspector ID:</label>
+        <input type="text" id="inspector_id" name="inspector_id" required><br><br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" required><br><br>
+
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="testing_criteria">Testing Criteria:</label>
+        <input type="text" id="testing_criteria" name="testing_criteria" required><br><br>
+
+        <label for="crash_test_percentage">Crash Test Percentage:</label>
+        <input type="text" id="crash_test_percentage" name="crash_test_percentage" required><br><br>
+
+        <input class="btn" type="submit" value="SUBMIT">
+    </div>
+</form>

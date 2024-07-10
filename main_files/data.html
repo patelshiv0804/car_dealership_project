@@ -1,0 +1,314 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        body {
+            background: linear-gradient(-0.38deg, #b0b7c3, rgba(135, 143, 152, 0.98) 11.86%, rgba(80, 91, 101, 0.91) 26.16%, rgba(35, 48, 59, 0.85) 57.6%, #001b31 90%);
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            justify-content: center;
+            display: flex;
+            top: 10%;
+            text-align: center;
+            color: white;
+            margin-top: 90px;
+            position: static;
+        }
+
+        td {
+            width: 130px;
+            border: 1px solid #cde9ff;
+        }
+
+        tr {
+            height: 29px;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('tbl');
+
+        getData(myParam);
+
+        let container = document.getElementById('container');
+
+        function getData(endpoint) {
+            fetch(`http://localhost:3300/${endpoint}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const table = createTable(data);
+                    const backButton = document.createElement('button');
+                    backButton.textContent = 'Go Back';
+                    backButton.onclick = () => window.close();
+                    const insertDataButton = document.createElement('button');
+                    insertDataButton.textContent = 'Insert Data';
+                    insertDataButton.onclick = () => insertData(endpoint);
+                    const deleteDataButton = document.createElement('button');
+                    deleteDataButton.textContent = 'Delete Data';
+                    deleteDataButton.onclick = () => deleteData(endpoint);
+                    const Searchbutton = document.createElement('button');
+                    Searchbutton.textContent = 'Search Data';
+                    Searchbutton.onclick = () => SearchData(endpoint);
+                    const upadteButton = document.createElement('button');
+                    upadteButton.textContent = 'update Data';
+                    upadteButton.onclick = () => updateData(endpoint);
+
+                    const deleteMessage = document.createElement('p');
+                    deleteMessage.setAttribute('id', 'deleteMessage');
+
+                    container.appendChild(backButton);
+                    container.appendChild(insertDataButton);
+                    container.appendChild(deleteDataButton);
+                    container.appendChild(Searchbutton);
+                    container.appendChild(upadteButton);
+                    container.appendChild(deleteMessage);
+
+                    container.appendChild(table);
+                })
+                .catch(error => {
+                    console.error('There was a problem with your fetch operation:', error);
+                });
+        }
+
+        function createTable(data) {
+            const table = document.createElement('table');
+            table.style.borderCollapse = 'collapse';
+
+        
+            const headerRow = table.insertRow();
+            for (const key in data[0]) {
+                const headerCell = headerRow.insertCell();
+                headerCell.textContent = key;
+                headerCell.style.border = '1px solid #cde9ff';
+            }
+
+
+            data.forEach(item => {
+                const row = table.insertRow();
+                for (const key in item) {
+                    const cell = row.insertCell();
+                    cell.textContent = item[key];
+                    cell.style.border = '1px solid #cde9ff';
+                }
+            });
+
+
+            const allRows = table.querySelectorAll('tr');
+            allRows.forEach(row => {
+                row.style.border = '1px solid white';
+            });
+
+            return table;
+        }
+
+        function insertData(endpoint) {
+            window.location.href = `${endpoint}-insert.html`;
+        }
+
+        function deleteData(endpoint) {
+            window.location.href = `${endpoint}-delete.html?tbl=${myParam}`;
+        }
+        function SearchData(endpoint) {
+            window.location.href = `search.html?tb=${endpoint}`;
+        }
+        function updateData(endpoint) {
+            window.location.href = `${endpoint}-update.html`;
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        body {
+            background: linear-gradient(-0.38deg, #b0b7c3, rgba(135, 143, 152, 0.98) 11.86%, rgba(80, 91, 101, 0.91) 26.16%, rgba(35, 48, 59, 0.85) 57.6%, #001b31 90%);
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            justify-content: center;
+            display: flex;
+            top: 10%;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            position: static;
+        }
+
+        td {
+            width: 130px;
+            border: 1px solid #cde9ff;
+        }
+
+        tr {
+            height: 29px;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 1rem;
+        }
+
+        #all-buttons {
+            margin-top: 25px;
+            gap: 10px;
+            justify-content: center;
+            display: flex;
+        }
+
+        button {
+            border-radius: 4px;
+            height: 30px;
+            width: 95px;
+            background-color: #858D95;
+            border: none;
+            color: white;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('tbl');
+
+        getData(myParam);
+
+        let container = document.getElementById('container');
+
+        function getData(endpoint) {
+            fetch(`http://localhost:3300/${endpoint}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const table = createTable(data);
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.id = 'all-buttons';
+                    // Create buttons
+                    const backButton = createButton('Go Back', () => window.close());
+                    const insertDataButton = createButton('Insert Data', () => insertData(endpoint));
+                    const deleteDataButton = createButton('Delete Data', () => deleteData(endpoint));
+                    const searchButton = createButton('Search Data', () => searchData(endpoint));
+                    const updateButton = createButton('Update Data', () => updateData(endpoint));
+
+                    // Append buttons to div
+                    buttonsDiv.appendChild(backButton);
+                    buttonsDiv.appendChild(insertDataButton);
+                    buttonsDiv.appendChild(deleteDataButton);
+                    buttonsDiv.appendChild(searchButton);
+                    buttonsDiv.appendChild(updateButton);
+
+                    // Append buttons div and table to container
+                    container.appendChild(buttonsDiv);
+                    container.appendChild(table);
+                })
+                .catch(error => {
+                    console.error('There was a problem with your fetch operation:', error);
+                });
+        }
+
+        function createTable(data) {
+            const table = document.createElement('table');
+            table.style.borderCollapse = 'collapse';
+
+            // Creating header row
+            const headerRow = table.insertRow();
+            for (const key in data[0]) {
+                const headerCell = headerRow.insertCell();
+                headerCell.textContent = key;
+                headerCell.style.border = '1px solid #cde9ff';
+            }
+
+            // Creating data rows
+            data.forEach(item => {
+                const row = table.insertRow();
+                for (const key in item) {
+                    const cell = row.insertCell();
+                    cell.textContent = item[key];
+                    cell.style.border = '1px solid #cde9ff';
+                }
+            });
+
+            // Adding border to rows
+            const allRows = table.querySelectorAll('tr');
+            allRows.forEach(row => {
+                row.style.border = '1px solid white';
+            });
+
+            return table;
+        }
+
+        function createButton(text, onClick) {
+            const button = document.createElement('button');
+            button.textContent = text;
+            button.onclick = onClick;
+            return button;
+        }
+
+        function insertData(endpoint) {
+            window.location.href = `${endpoint}-insert.html`;
+        }
+
+        function deleteData(endpoint) {
+            window.location.href = `${endpoint}-delete.html?tbl=${myParam}`;
+        }
+
+        function searchData(endpoint) {
+            window.location.href = `search.html?tb=${endpoint}`;
+        }
+
+        function updateData(endpoint) {
+            window.location.href = `${endpoint}-update.html`;
+        }
+    </script>
+</body>
+
+</html>

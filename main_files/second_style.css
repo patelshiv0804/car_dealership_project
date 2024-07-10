@@ -1,0 +1,320 @@
+body {
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    line-height: normal;
+    background: linear-gradient(-0.38deg, #b0b7c3, rgba(135, 143, 152, 0.98) 11.86%, rgba(80, 91, 101, 0.91) 26.16%, rgba(35, 48, 59, 0.85) 57.6%, #001b31 90%);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.inner {
+    top: 20%;
+    position: absolute;
+    left: 9%;
+}
+
+#group1 {
+    display: flex;
+    gap: 48px;
+}
+
+.inner #group1 .manufacturing:hover {
+    cursor: pointer;
+}
+
+.manufacturing {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.manufacturing img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.manufacturing p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inner #group1 .model:hover {
+    cursor: pointer;
+}
+
+.model {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.model img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.model p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inner #group1 .price:hover {
+    cursor: pointer;
+}
+
+.price {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.price img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.price p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#group3 {
+    display: flex;
+    gap: 48px;
+    margin-top: 68px;
+}
+
+
+.inner #group3 .customer:hover {
+    cursor: pointer;
+}
+
+.customer {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.customer img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.customer p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inner #group3 .supplier:hover {
+    cursor: pointer;
+}
+
+.supplier {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.supplier img {
+    height: 65px;
+    width: 65px;
+    margin-left: 31px;
+    margin-top: 25px;
+}
+
+.supplier p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inner #group3 .order:hover {
+    cursor: pointer;
+}
+
+.order {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.order img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.order p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#group4 {
+    display: flex;
+    gap: 48px;
+    margin-top: 68px;
+}
+
+.inner #group4 .quality:hover {
+    cursor: pointer;
+}
+
+.quality {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.quality img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.quality p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inner #group4 .variant:hover {
+    cursor: pointer;
+}
+
+.variant {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.variant img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.variant p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.inner #group4 .inventory:hover {
+    cursor: pointer;
+}
+
+.inventory {
+    background-color: #D9D9D9;
+    height: 111px;
+    width: 390px;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.inventory img {
+    height: 56px;
+    width: 56px;
+    margin-left: 34px;
+    margin-top: 28px;
+}
+
+.inventory p {
+    margin-left: 27px;
+    margin-top: 43px;
+    font-size: 20px;
+    font-family: "Armata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button {
+    padding: 0;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
